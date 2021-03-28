@@ -8,10 +8,11 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/c7d73dbfbb.js" crossorigin="anonymous"></script>
   </head>
 
-  <body>
-    <% if ["public", "devise"].include?(controller.controller_name) %>
+  <body id="<%= controller.controller_name %>" class="<%= controller.action_name %>">
+    <% if ["public", "devise", "sessions"].include?(controller.controller_name) %>
     <header>
       <%= render 'layouts/nav/public' %>
       <%= yield %>
@@ -29,5 +30,6 @@
 </div>
 <% end %>
     <%= render 'layouts/footer' %>
+    <div id="notifications"><%= notice %></div>
   </body>
 </html>
