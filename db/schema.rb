@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2021_03_26_204919) do
     t.integer "price"
     t.integer "rooms"
     t.integer "bathrooms"
-    t.string "photo"
+    t.string "photo_data"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["account_id"], name: "index_properties_on_account_id"

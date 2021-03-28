@@ -23,5 +23,10 @@
   <%= @property.bathrooms %>
 </p>
 
+<p>
+  <strong>Photo:</strong>
+  <%= image_tag(@property.photo_url) if @property.photo_url %>
+</p>
+
 <%= link_to 'Edit', edit_property_path(@property) %> |
 
