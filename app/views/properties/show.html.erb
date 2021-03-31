@@ -6,9 +6,12 @@
 <% if account_signed_in? %>
 
 <div class="fluid-container love">
+
 <p class='img-photo'>
   <%= image_tag(@property.photo_url, class:'show-photo-1') if @property.photo_url %>
 </p>
+<div class="row">
+<div class="col-8">
 <p class="par-1">
   <strong>Name:</strong>
   <%= @property.name %>
@@ -38,7 +41,11 @@
   <%= @property.bathrooms %>
 </p>
 </div>
-<%= link_to 'Edit', edit_property_path(@property) %> |
+<div class="col-4">
+  <%= render 'properties/agent_details' %>
+</div>
+</div>
+</div>
 <% end %>
 
 
