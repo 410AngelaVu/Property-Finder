@@ -4,7 +4,11 @@
 <% end %>
 
 <% if account_signed_in? %>
+
 <div class="fluid-container love">
+<p class='img-photo'>
+  <%= image_tag(@property.photo_url, class:'show-photo-1') if @property.photo_url %>
+</p>
 <p class="par-1">
   <strong>Name:</strong>
   <%= @property.name %>
@@ -32,12 +36,6 @@
 <p class="par-1">
   <strong>Bathrooms:</strong>
   <%= @property.bathrooms %>
-</p>
-
-
-<p class='img-photo'>
-  <strong>Photo:</strong>
-  <%= image_tag(@property.photo_url, class:'show-photo') if @property.photo_url %>
 </p>
 </div>
 <%= link_to 'Edit', edit_property_path(@property) %> |
