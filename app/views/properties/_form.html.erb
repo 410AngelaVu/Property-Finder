@@ -16,6 +16,8 @@
     <%#= f.submit "Save Property", class:'btn btn-info btn-lg' %>
   </div>
 <%# end %> -->
+<div class="container-fluid">
+  <div class="row">
 
 <%= form_with(model: @property, url: properties_path, method: :post) do |f| %>
   
@@ -53,3 +55,5 @@
       <%= f.submit class:'btn btn-info b-1' %>
     </div><br>
     <% end %>
+</div>
+</div>
