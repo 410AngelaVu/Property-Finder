@@ -12,6 +12,21 @@
 </p>
 <div class="row">
 <div class="col-8">
+  <div class="col-6">
+  <p class="par-2"><%= @property.address %></p>
+  <p class="h3 par-2">For Sale</p>
+</div>
+<div class="col-6">
+  <div>
+    <%= @property.rooms %>
+  </div>
+  <div>
+    <%= @property.bathrooms %>
+  </div>
+  <div>
+    <%= @property.parking_space %>
+  </div>
+</div>
 <p class="par-1">
   <strong>Name:</strong>
   <%= @property.name %>
