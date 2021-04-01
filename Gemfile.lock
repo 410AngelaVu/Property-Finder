@@ -226,9 +226,6 @@ GEM
       down (~> 5.0)
       http (>= 3.2, < 5)
       shrine (>= 3.0.0.rc, < 4)
-    simple_form (5.1.0)
-      actionpack (>= 5.2)
-      activemodel (>= 5.2)
     spring (2.1.1)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
@@ -291,7 +288,6 @@ DEPENDENCIES
   selenium-webdriver
   shrine (~> 3.3)
   shrine-cloudinary (~> 1.1, >= 1.1.1)
-  simple_form (~> 5.1)
   spring
   turbolinks (~> 5)
   tzinfo-data

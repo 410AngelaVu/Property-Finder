@@ -11,32 +11,32 @@
   <%= image_tag(@property.photo_url, class:'show-photo-1') if @property.photo_url %>
 </p>
 <div class="row">
-<div class="col-8">
-  <div class="col-6">
+<div class="col-sm-8">
+  <div class="col-sm-6">
   <p class="par-2"><%= @property.address %></p>
   <p class="h3 par-2"><%= @property.price > 0 ? number_to_currency(@property.price, precision: 0) : "For Sale" %></p>
 </div>
-<div class="col-6 show-div">
+<div class="col-sm-6 show-div">
   <div class="row">
   
-    <p class=""><strong>Rooms:</strong></p>
-   <span><%= @property.rooms %></span>&nbsp;&nbsp;
+    <p class=""><strong><i class="fas fa-person-booth fa-lg"></i></strong></p>&nbsp;&nbsp;
+   <span><%= @property.rooms %></span>&nbsp;&nbsp;| &nbsp;&nbsp;
   
   
-    <p><strong>Bathrooms:</strong></p>
-    <span><%= @property.bathrooms %></span>&nbsp;&nbsp;
+    <p><strong><i class="fas fa-shower fa-lg"></i></strong></p>&nbsp;&nbsp;
+    <span><%= @property.bathrooms %></span>&nbsp;&nbsp;| &nbsp;&nbsp;
  
   
-    <p><strong>Parking space:</strong></p>
+    <p><strong><i class="fas fa-car fa-lg"></i></strong></p>&nbsp;&nbsp;
    <span><%= @property.parking_space %></span>
  
 </div>
-</div>
+</div><br><br>
 <div class="row border-top border-bottom estimate">
-<div class="col-6">
+<div class="col-sm-6">
  <%= link_to "Est Monthly Repayments of #{number_to_currency((@property.price - (@property.price * 0.1)) / 360, precision: 0)} *", "#", class:'text-success' %>
 </div>
-<div class="col-6 text-right">
+<div class="col-sm-6 text-right">
   <strong class="text-success">Can I afford this property?</strong>
 </div>
 </div><br>
@@ -67,7 +67,7 @@
   <%= @property.bathrooms %>
 </p>
 </div>
-<div class="col-4">
+<div class="col-sm-4">
   <%= render 'properties/agent_details' %>
 </div>
 </div>
