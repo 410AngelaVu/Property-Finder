@@ -34,7 +34,7 @@
 </div>
 <div class="row border-top border-bottom estimate">
 <div class="col-6">
- <strong class="text-success">Est Monthly Repayments of <%= number_to_currency((@property.price / 360), precision: 0) %></strong>
+ <%= link_to "Est Monthly Repayments of #{number_to_currency((@property.price - (@property.price * 0.1)) / 360, precision: 0)} *", "#", class:'text-success' %>
 </div>
 <div class="col-6 text-right">
   <strong class="text-success">Can I afford this property?</strong>
@@ -48,8 +48,8 @@
 <div id="prop-details">
 <%= simple_format @property.details %>
 </div>
-<button class="btn btn-outline-info" id="toggleDetails">Show more</button>
-
+<button class="btn btn-outline-info" id="toggleDetails">Show more</button><br><br>
+<p>* This rate is basedon a 30 yearmortage, after paying an initial 10%down payment. Shorter term mortages would require a higher monthly repeyment</p>
 <p class="par-1">
   <strong>Price:</strong>
   <%= @property.price %>
