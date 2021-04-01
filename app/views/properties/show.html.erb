@@ -14,29 +14,38 @@
 <div class="col-8">
   <div class="col-6">
   <p class="par-2"><%= @property.address %></p>
-  <p class="h3 par-2">For Sale</p>
+  <p class="h3 par-2"><%= @property.price > 0 ? number_to_currency(@property.price, precision: 0) : "For Sale" %></p>
 </div>
+<div class="col-6 show-div">
+  <div class="row">
+  
+    <p class=""><strong>Rooms:</strong></p>
+   <span><%= @property.rooms %></span>&nbsp;&nbsp;
+  
+  
+    <p><strong>Bathrooms:</strong></p>
+    <span><%= @property.bathrooms %></span>&nbsp;&nbsp;
+ 
+  
+    <p><strong>Parking space:</strong></p>
+   <span><%= @property.parking_space %></span>
+ 
+</div>
+</div>
+<div class="row border-top border-bottom estimate">
 <div class="col-6">
-  <div>
-    <%= @property.rooms %>
-  </div>
-  <div>
-    <%= @property.bathrooms %>
-  </div>
-  <div>
-    <%= @property.parking_space %>
-  </div>
+ <strong class="text-success">Est Monthly Repayments of <%= number_to_currency((@property.price / 360), precision: 0) %></strong>
 </div>
-<p class="par-1">
-  <strong>Name:</strong>
-  <%= @property.name %>
-</p>
+<div class="col-6 text-right">
+  <strong class="text-success">Can I afford this property?</strong>
+</div>
+</div><br>
+<div class="row property-description">
+  <div class="col">
+    <p class="h3">Property Description</p>
+<p class><%= @property.name %></p>
+<%= simple_form @property.details %>
 
-
-<p class="par-1">
-  <strong>Address:</strong>
-  <%= @property.address %>
-</p>
 
 
 <p class="par-1">
@@ -58,6 +67,8 @@
 </div>
 <div class="col-4">
   <%= render 'properties/agent_details' %>
+</div>
+</div>
 </div>
 </div>
 </div>
